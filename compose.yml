@@ -1,5 +1,5 @@
 services:
-   hani:
+  karen:
     build:
       context: .
     ports:
@@ -11,16 +11,23 @@ services:
     models:
       qwen3:
         model_var: GOOSE_MODEL
-   mcp-gateway:
+  mcp-gateway:
     image: docker/mcp-gateway:latest
     use_api_socket: true
     command:
       - --transport=sse
-      - --servers=youtube_transcript
+      - --servers=${SERVERS}
+      - --tools=${TOOLS}
+      - --secrets=/run/secrets/mcp_secret
+    secrets:
+      - mcp_secret
 
 models:
- qwen3:
-  # pre-pull the model when starting Docker Model Runner
-  model: hf.co/unsloth/qwen3-30b-a3b-instruct-2507-gguf:q5_k_m
-  context_size: 16355
-    
+  qwen3:
+    # pre-pull the model when starting Docker Model Runner
+    model: ${MODEL}
+    context_size: 16535
+
+secrets:
+  mcp_secret:
+    file: ./.mcp-secrets.env
