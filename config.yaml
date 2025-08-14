@@ -1,13 +1,7 @@
 extensions:
-  developer:
-    display_name: null
-    enabled: true
-    name: developer
-    timeout: null
-    type: builtin
   mcpgateway:
     bundled: false
-    description: 'Docker MCP gateway'
+    description: "Docker MCP gateway"
     enabled: true
     name: mcpgateway
     timeout: 300
@@ -22,4 +16,3 @@ GOOSE_ROUTER_TOOL_SELECTION_STRATEGY: default
 
 OPENAI_BASE_PATH: engines/llama.cpp/v1/chat/completions
 OPENAI_HOST: http://model-runner.docker.internal
-

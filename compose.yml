@@ -8,6 +8,8 @@ services:
       - mcp-gateway
     env_file:
       - .env
+    environment:
+      - GOOSE_SYSTEM_PROMPT_FILE_PATH=system.md
     models:
       qwen3:
         model_var: GOOSE_MODEL

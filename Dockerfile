@@ -25,7 +25,7 @@ RUN wget -qO- https://github.com/block/goose/releases/download/stable/download_c
     /root/.local/bin/goose --version  
     
 COPY config.yaml /root/.config/goose/config.yaml 
-COPY goosehints.md .goosehints
+COPY goosehints.md system.md
 
 # Expose port for ttyd
 EXPOSE 7681

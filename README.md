@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="docs/karen.png" alt="Karen" width="200"/>
+</div>
+
 # Karen 
 
 AI assistant to create issues on GitHub when stuff doesn't work. You know, a complainer.
